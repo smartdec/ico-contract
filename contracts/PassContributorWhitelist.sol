@@ -1,8 +1,10 @@
-pragma solidity 0.4.19;
+pragma solidity 0.4.21;
 
 import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
+
 contract PassContributorWhitelist is Ownable {
+
     mapping(address => uint256) public whitelist;
 
     function PassContributorWhitelist() public {}
@@ -11,11 +13,11 @@ contract PassContributorWhitelist is Ownable {
 
     function listAddress(address _user, uint256 cap) public onlyOwner {
         whitelist[_user] = cap;
-        ListAddress(_user, cap, now);
+        emit ListAddress(_user, cap, now);
     }
 
     function listAddresses(address[] _users, uint256[] _caps) public onlyOwner {
-        for(uint i = 0; i < _users.length; i++) {
+        for (uint i = 0; i < _users.length; i++) {
             listAddress(_users[i], _caps[i]);
         }
     }

@@ -4,7 +4,8 @@
   "description": "",
   "main": "truffle-config.js",
   "dependencies": {
-    "truffle-hdwallet-provider": "0.0.3"
+    "truffle-hdwallet-provider": "0.0.3",
+    "zeppelin-solidity": "1.8.0"
   },
   "devDependencies": {},
   "scripts": {
